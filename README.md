@@ -4,6 +4,6 @@ Html file Translator that looks into the files in given directory only translate
 Includes node modules that are needed
 </br>
 Instructions</br>
-</br>1.In Translator.js file enter the wanted language and your google translate cloud api key and projectid in the designated areas
+</br>1.In Translator.js file enter the wanted language and your google translate cloud api key and projectid in the designated areas and Extract the node_modules.rar file
 </br>2.Run code in CMD
 </br>3.Write the direcory that contains files and folders that you want to translate
