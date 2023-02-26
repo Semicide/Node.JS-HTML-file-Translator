@@ -1,5 +1,6 @@
 # Node.JS-HTML-file-Translator
-Html file Translator that looks into the files in given directory only translate inside the writing parts ("<p>","<h1>","<button>",etc.) these can be changed in the translator.js file as wanted
+<h1>Html Bulk File Translator</h1>
+Html file Translator that looks into the files in given directory only translate inside the writing parts these can be changed in the translator.js file as wanted
 Includes node modules that are needed
 
 Instructions
