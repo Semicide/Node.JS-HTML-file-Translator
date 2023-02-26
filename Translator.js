@@ -15,18 +15,18 @@ rl.question('Enter your Directory Path: ', (answer) => {
     const filePath = path.join(answer, file);
     if (fs.statSync(filePath).isDirectory()) {
       console.log(`Checking folder: ${filePath}`);
-      translateFolder(filePath, 'hi');
+      translateFolder(filePath, 'LangYouWant');//Write the language you want to translate to here
     } else {
-      console.log(`Translating file: ${filePath}`);
-      translateFile(filePath, 'hi');
+      console.log(`Translating file: ${filePath}`);//Write the language you want to translate to here
+      translateFile(filePath, 'LangYouWant');
     }
   });
   rl.close();
 });
 
 const translateText = async (text, targetLanguage) => {
-  const projectId = 'oceanic-hold-378720';
-  const api_key = 'AIzaSyCfDvMBk_xtjsEoStpKDLNQVkCJ2AWJ9pY';
+  const projectId = 'YourProjectIDHere';//Your Project ID here
+  const api_key = 'YourApiKeyHere';//Your api key here
   const translate = new Translate({ projectId, key: api_key });
   const [translation] = await translate.translate(text, targetLanguage);
   return translation;
@@ -49,6 +49,7 @@ const translateFile = async (filePath, targetLanguage) => {
   const fileContent = fs.readFileSync(filePath, 'utf-8');
   const dom = new JSDOM(fileContent);
   const nodes = dom.window.document.querySelectorAll('div.core-msg spacer, div.ray-id, div.text-center, span.filter-tabs__tab-control, div.btn-medium, title, button, h1, h2, h3, p, strong, a, span.checkbox-label, span.inline-block, span.text-1, span.text-3, span.text-2, option, div.margin-top-medium, label, form.input.placeholder, a.main-nav-dropdown__item-control');
+ //You can write the tags that you want the insides translated in the line above
   await translateTextNodes(nodes, targetLanguage);
   const fileName = `${path.basename(filePath, path.extname(filePath))}.html`;
   const outputPath = path.join(path.dirname(filePath), fileName);
